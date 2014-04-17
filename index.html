@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="ballin.playlist">
+<head>
+	<meta charset="UTF-8">
+	<title>Playlists all day</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="playlist.js"></script>
+</head>
+<body ng-controller="ballin.playlistControl">
+	Songs
+	<div ng-repeat="playlist in playlists" ng-show='playlists'>
+		<p>{{ playlist.name }}</p>
+
+		<div ng-repeat='song in playlist.songs'>
+			<p>{{ song.name }}</p>
+			<p>{{ song.artist }}</p>
+			<p>{{ song.url }}</p
+			<p>{{ song.id }}</p>
+		</div>
+	</div>
+
+	<div ng-hide='playlists'>
+		{{defaultDisplay}}
+	</div>
+
+</body>
+</html>
